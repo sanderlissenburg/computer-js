@@ -1,23 +1,21 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-    entry: [
-        path.resolve(__dirname, 'src/js/main.js')
-    ],
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: "main.js"
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
-    }
+  entry: path.resolve(__dirname, 'src/js/app.js'),
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'build/js')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'react']
+        }
+      }
+    ]
+  }
 };
