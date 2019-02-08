@@ -16,7 +16,9 @@
     "webpack-cli": "^2.0.12"
   },
   "dependencies": {
+    "imports-loader": "^0.8.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "redux": "^3.7.2"
   }
 }
